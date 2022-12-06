@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+.nav {
+    position: fixed;
+    width: 6rem;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 20fr;
+    background-color: #BDBDBD;
+    z-index: 5;
+    transition: width 200ms ease;
+  }
+  
+  .nav:hover {
+    width: 20rem;
+    transition: all ease 0.1s;
+  }
+  
+  .nav:hover .link-text {
+    display: block;
+  }
+
+  .medifind-box{
+    display: flex;
+    width: fit-content;
+    font-size: 2.5rem;
+    justify-content: center;
+    margin: 0 0 1.5rem 1.3rem;
+    font-family: "Secular One";
+    color: #c81927;
+  }
+
+  .medifind{
+    display: flex;
+  }
+
+  .medifind-rest{
+    display: none;
+  }
+
+  .nav:hover .medifind-rest{
+    display: block;
+    transition: all ease 0.3;
+  }
+o
+  .nav:hover .medifind-box{
+    justify-content: flex-start;
+  }
+  
+  .nav-list {
+    all: unset;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: flex-start;
+  }
+  
+  .nav-link {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 5rem;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .nav-link:hover {
+    color: #C81927;
+    transition: ease 0.3s;
+    background-color: #CCABAE;
+  }
+  
+  .nav-link svg {
+    min-width: 2.1rem;
+    max-width: 2.1rem;
+    margin: 0 1.5rem;
+  }
+  .link-text {
+    display: none;
+    margin-left: 1rem;
+    font-family: "Ruda", sans-serif;
+    font-size: 1.8rem;
+  }
+  
+  .nav-item {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .nav-item:last-child {
+    margin-top: 15rem;
+  }
+
+  svg{
+    justify-self: center;
+  }
