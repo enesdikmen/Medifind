@@ -3,7 +3,6 @@ package com.medifind
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -48,8 +47,6 @@ class PharmacyListAdapter(private val jsonArray: JSONArray) : RecyclerView.Adapt
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = jsonArray.getJSONObject(position)
         holder.binding.listText.text = item.getString("pharmacy_name")
-        Log.d("hello1",item.toString())
-        Log.d("hello2",item.getString("pharmacy_name"))
     }
 
     override fun getItemCount(): Int {

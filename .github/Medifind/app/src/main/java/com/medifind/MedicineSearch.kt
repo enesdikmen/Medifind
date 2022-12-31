@@ -1,14 +1,15 @@
 package com.medifind
 
+import android.app.SearchManager
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.AsyncTask
 import android.util.Log
-import android.view.View
+import android.widget.*
 import org.json.JSONObject
-import android.widget.Button
 import androidx.appcompat.widget.SearchView
+import com.medifind.databinding.ActivityMedicineSearchBinding
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -32,6 +33,7 @@ class MedicineSearch : AppCompatActivity() {
             // Get the search query from the SearchView
             val medicineName = medicineSearch.query.toString()
             val cityName = citySearch.query.toString()
+
 
             // Create the JSON object
             val jsonObject = JSONObject()
@@ -69,17 +71,21 @@ class MedicineSearch : AppCompatActivity() {
                 }
                 if(jsonObject.has("detail")){
                     val data = jsonObject.getJSONArray("cities").toString()
-                    val intent = Intent(this@MedicineSearch, PharmacyList::class.java)
+                    val intent = Intent(this@MedicineSearch, CitiesList::class.java)
                     intent.putExtra("cities", data)
+                    intent.putExtra("medicine_name", json.getString("medicine_name"))
                     startActivity(intent)
                 }
 
-                if(jsonObject.has("error")){
-
-                }
             } else {
-                // The request was unsuccessful
-                return ""
+                val responseBody = response.body?.string() ?: ""
+                val jsonObject = JSONObject(responseBody)
+                Log.d(jsonObject.toString(), "er")
+                val data = jsonObject.get("error").toString()
+                Log.d(data, "err")
+                val intent = Intent(this@MedicineSearch, ErrorPage::class.java)
+                intent.putExtra("error", data)
+                startActivity(intent)
             }
             return ""
         }
@@ -89,4 +95,3 @@ class MedicineSearch : AppCompatActivity() {
         }
     }
 }
-

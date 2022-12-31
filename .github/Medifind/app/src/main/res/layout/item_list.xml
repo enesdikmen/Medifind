@@ -4,7 +4,8 @@
     android:id="@+id/item_cell"
     android:layout_width="match_parent"
     android:layout_height="90dp"
-    app:cardCornerRadius="5dp"
+    app:cardCornerRadius="25dp"
+    app:cardBackgroundColor="@color/bgBox"
     android:layout_margin="5dp">
 
     <LinearLayout
@@ -13,12 +14,15 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
             android:layout_margin="15dp"
+            android:gravity="center_vertical"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:text="Place Holder"
+            android:textColor="@color/blueButton"
+            android:textSize="12pt"
             android:id="@+id/list_text"/>
 
     </LinearLayout>
