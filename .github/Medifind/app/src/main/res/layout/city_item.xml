@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/city_item"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    app:cardCornerRadius="15dp"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blueButton">
+
+        <TextView
+            android:id="@+id/city_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="Place Holder"
+            android:textColor="@color/white"
+            android:textSize="12pt" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
